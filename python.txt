@@ -1,0 +1,11 @@
+/*
+4
+4
+4
+ -> 이런 형태 list()로 입력 받기
+*/
+arr = [int(input()) for _ in range(3)] 
+
+// [i]값을 i번 arr 리스트에 넣기(append)
+arr += [i]*i
+
