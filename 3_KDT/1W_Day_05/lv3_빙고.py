@@ -19,15 +19,15 @@ def solution(board, nums):
             if board[i][j] in nums:
                 board[i][j] = 0
                 row_list[i] += 1
-                col_list[i] += 1
+                col_list[j] += 1
 
                 if i == j:
                     row_diagonal += 1
                 if n - 1 - i == j:
                     col_diagonal += 1
 
-    answer += sum([1 for l in row_list if l == n])
-    answer += sum([1 for l in col_list if l == n])
+    answer += row_list.count(n)
+    answer += col_list.count(n)
     answer += 1 if row_diagonal == n else 0
     answer += 1 if col_diagonal == n else 0
 
