@@ -7,12 +7,13 @@
 
 
 import heapq
+from collections import deque
 
 
 def solution(healths, items):
     answer = []
     healths.sort()
-    items = sorted([(item[1], item[0], index + 1) for index, item in enumerate(items)])
+    items = deque(sorted([(item[1], item[0], index + 1) for index, item in enumerate(items)]))
     heap = []
 
     for health in healths:
@@ -21,7 +22,7 @@ def solution(healths, items):
 
             if health - debuff < 100:
                 break
-            items.pop(0)
+            items.popleft()
             heapq.heappush(heap, (-buff, index))
 
         if heap:
