@@ -9,6 +9,13 @@
 import heapq
 from collections import deque
 
+"""
+그냥 list로 선언을 하여 pop(0)을 하면 
+제거 후 앞으로 댕기는 작업이 있으므로 O(N) 시간이 걸린다.
+
+하지만 deque로 선언을 하면 O(1) 시간만 걸린다.
+"""
+
 
 def solution(healths, items):
     answer = []
