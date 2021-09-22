@@ -31,7 +31,7 @@ def init(board):
     orders = list(permutations(orders))
 
 
-#이동한 결과가 보드 범위내 있는지 판단하는 함수
+# 이동한 결과가 보드 범위내 있는지 판단하는 함수
 def isin(y, x):
     if -1 < y < size and -1 < x < size:
         return True
@@ -70,7 +70,7 @@ def BFS(sy, sx, ey, ex):
     visit[sy][sx] = True
 
     while q:
-        y, x = q.pop()
+        y, x = q.popleft()
 
         for i in range(4):
             #한칸씩 이동
