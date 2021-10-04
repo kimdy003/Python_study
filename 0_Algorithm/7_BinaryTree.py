@@ -27,7 +27,7 @@ class BinaryTree:
         elif key > root.data:
             return self.Search(root.right, key)
 
-    # 전이 순회
+    # 전위 순회
     def PreOrder(self, root: Node):
         if root is None:
             pass
