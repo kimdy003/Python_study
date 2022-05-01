@@ -546,4 +546,58 @@ except EmptyException:
 class EmptyException(Exception):
     pass
 ```
+
 위처럼 파이썬의 내장 클래스인 Exception을 상속받으면 오류를 직접 만들 수 있다.
+
+<hr>
+
+## 아스키 코드 <-> 숫자 변환 방법
+
+ord(문자) : 아스키 코드를 반환  
+chr(숫자) : 숫자에 맞는 아스키 코드를 반환
+
+<hr>
+
+
+## 파이썬 시계 방향 회전 알고리즘
+
+### 💡 90도 회전
+``` python
+for r in range(N):
+    for c in range(N):
+        ret[c][N-1-r] = key[r][c]
+```
+
+회전 전의 열 번호와 회전 후의 행 번호가 일치   
+그리고 회전 후의 열은 N-1에서 회전 전의 행을 뺀 값이다
+
+<br/>
+
+### 💡 180도 회전
+``` python
+for r in range(N):
+    for c in range(N):
+        ret[N-1-r][N-1-c] = key[r][c]
+```
+
+회전 후의 행 번호는 N-1 의 값에서 전의 행 번호를 뺀 것과 같다.   
+회전 후의 열 번호는 N-1 의 값에서 전의 열 번호를 뺀 것과 같다.
+
+<br/>
+
+### 💡 270도 회전
+``` python
+for r in range(N):
+    for c in range(N):
+        ret[N-1-c][r] = key[r][c]
+```
+
+회전 후의 열과 전의 행이 일치한다.   
+후의 행 번호는 N-1 에서 전의 열 번호를 뺀 값과 일치한다.
+
+<br/>
+
+### 💡파이썬 기반 회전 코드
+```python 
+list(zip(*arr[::-1]))
+```
