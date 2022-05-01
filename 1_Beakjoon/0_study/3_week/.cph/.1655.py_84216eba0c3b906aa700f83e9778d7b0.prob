@@ -1,0 +1,1 @@
+{"name":"Local: 1655","url":"c:\\Users\\kyl11\\Desktop\\python\\1_Beakjoon\\0_study\\3_week\\1655.py","tests":[{"id":1634283598782,"input":"7\n1\n5\n2\n10\n-99\n7\n5","output":"1\n1\n2\n2\n2\n2\n5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\kyl11\\Desktop\\python\\1_Beakjoon\\0_study\\3_week\\1655.py","group":"local","local":true}
