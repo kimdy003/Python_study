@@ -1,6 +1,5 @@
 def perm(arr, r):
     ans = []
-    arr = sorted(arr)
     visited = [0 for _ in range(len(arr))]
 
     def generate(result, visited):
@@ -8,18 +7,19 @@ def perm(arr, r):
             ans.append(result[:])
             return
 
-        for i in range(len(arr)):
-            if not visited[i]:
-                result.append(arr[i])
-                visited[i] = 1
+        for idx in range(len(arr)):
+            if not visited[idx]:
+                result.append(arr[idx])
+                visited[idx] = 1
 
                 generate(result, visited)
 
                 result.pop()
-                visited[i] = 0
+                visited[idx] = 0
 
     generate([], visited)
     return ans
 
 
 print(perm([1, 2, 3], 2))
+print(perm([1, 2, 3], 3))

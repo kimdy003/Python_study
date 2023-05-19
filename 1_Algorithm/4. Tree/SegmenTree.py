@@ -17,9 +17,7 @@ def Init(node, start, end):
     else:
         mid = (start + end) // 2
         # 재귀함수를 이용하여 왼쪽 자식과 오른쪽 자식 트리를 만들고 합을 저장
-        tree[node] = Init(node * 2, start, mid) + Init(
-            node * 2 + 1, mid + 1, end
-        )
+        tree[node] = Init(node * 2, start, mid) + Init(node * 2 + 1, mid + 1, end)
         return tree[node]
 
 
@@ -51,9 +49,7 @@ def Subsum(node, start, end, left, right):
 
     # 왼쪽 자식과 오른쪽 자식을 루트로 하는 트리에서 다시 탐색을 시작해야 한다.
     mid = (start + end) // 2
-    return Subsum(node * 2, start, mid, left, right) + Subsum(
-        node * 2 + 1, mid + 1, end, left, right
-    )
+    return Subsum(node * 2, start, mid, left, right) + Subsum(node * 2 + 1, mid + 1, end, left, right)
 
 
 N, M, K = map(int, input().split())
